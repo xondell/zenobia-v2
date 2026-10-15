@@ -1,0 +1,1480 @@
+{
+  "errors": [],
+  "report": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "prologue",
+      "overflow": false,
+      "boxes": []
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "crisis",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 640,
+          "height": 321.546875,
+          "bottom": 409.546875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 409.546875,
+          "width": 640,
+          "height": 407.84375,
+          "bottom": 817.390625
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 28.796875,
+          "y": 76,
+          "width": 1862.40625,
+          "height": 923,
+          "bottom": 999
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "palmyra",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 640,
+          "height": 216.921875,
+          "bottom": 304.921875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 304.921875,
+          "width": 640,
+          "height": 407.84375,
+          "bottom": 712.765625
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 28.796875,
+          "y": 76,
+          "width": 1862.40625,
+          "height": 923,
+          "bottom": 999
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "rise",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 76.796875,
+          "y": 88,
+          "width": 1100,
+          "height": 189.875,
+          "bottom": 277.875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 76.796875,
+          "y": 438.96875,
+          "width": 546.8125,
+          "height": 416.9375,
+          "bottom": 855.90625
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 681.203125,
+          "y": 339.046875,
+          "width": 1100,
+          "height": 616.78125,
+          "bottom": 955.828125
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "expansion",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 640,
+          "height": 278.359375,
+          "bottom": 366.359375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 366.359375,
+          "width": 640,
+          "height": 445.9375,
+          "bottom": 812.296875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 28.796875,
+          "y": 76,
+          "width": 1862.40625,
+          "height": 923,
+          "bottom": 999
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "augusta",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 640,
+          "height": 278.359375,
+          "bottom": 366.359375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 366.359375,
+          "width": 640,
+          "height": 369.75,
+          "bottom": 736.109375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 28.796875,
+          "y": 76,
+          "width": 1862.40625,
+          "height": 923,
+          "bottom": 999
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "aurelian",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 640,
+          "height": 278.359375,
+          "bottom": 366.359375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 366.359375,
+          "width": 640,
+          "height": 369.75,
+          "bottom": 736.109375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 28.796875,
+          "y": 76,
+          "width": 1862.40625,
+          "height": 923,
+          "bottom": 999
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "fall",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 76.796875,
+          "y": 88,
+          "width": 1100,
+          "height": 189.875,
+          "bottom": 277.875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 76.796875,
+          "y": 372.828125,
+          "width": 580.984375,
+          "height": 549.21875,
+          "bottom": 922.046875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 715.375,
+          "y": 322.84375,
+          "width": 1100,
+          "height": 649.1875,
+          "bottom": 972.03125
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "legacy",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 640,
+          "height": 216.921875,
+          "bottom": 304.921875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 304.921875,
+          "width": 640,
+          "height": 445.9375,
+          "bottom": 750.859375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 28.796875,
+          "y": 76,
+          "width": 1862.40625,
+          "height": 923,
+          "bottom": 999
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "id": "epilogue",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 76.796875,
+          "y": 88,
+          "width": 1100,
+          "height": 237.40625,
+          "bottom": 325.40625
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 76.796875,
+          "y": 431.328125,
+          "width": 580.984375,
+          "height": 479.75,
+          "bottom": 911.078125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 715.375,
+          "y": 402.5,
+          "width": 1100,
+          "height": 537.40625,
+          "bottom": 939.90625
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "prologue",
+      "overflow": false,
+      "boxes": []
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "crisis",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 40.96875,
+          "y": 88,
+          "width": 462.25,
+          "height": 199.09375,
+          "bottom": 287.09375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 40.96875,
+          "y": 287.09375,
+          "width": 462.25,
+          "height": 273.84375,
+          "bottom": 560.9375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 20.484375,
+          "y": 76,
+          "width": 1325.03125,
+          "height": 611,
+          "bottom": 687
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "palmyra",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 40.96875,
+          "y": 88,
+          "width": 462.25,
+          "height": 166.09375,
+          "bottom": 254.09375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 40.96875,
+          "y": 254.09375,
+          "width": 462.25,
+          "height": 273.84375,
+          "bottom": 527.9375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 20.484375,
+          "y": 76,
+          "width": 1325.03125,
+          "height": 611,
+          "bottom": 687
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "rise",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 54.625,
+          "y": 88,
+          "width": 1100,
+          "height": 143.59375,
+          "bottom": 231.59375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 54.625,
+          "y": 327.359375,
+          "width": 389.046875,
+          "height": 284.9375,
+          "bottom": 612.296875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 484.640625,
+          "y": 255.59375,
+          "width": 826.734375,
+          "height": 428.46875,
+          "bottom": 684.0625
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "expansion",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 40.96875,
+          "y": 88,
+          "width": 462.25,
+          "height": 166.09375,
+          "bottom": 254.09375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 40.96875,
+          "y": 254.09375,
+          "width": 462.25,
+          "height": 299.9375,
+          "bottom": 554.03125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 20.484375,
+          "y": 76,
+          "width": 1325.03125,
+          "height": 611,
+          "bottom": 687
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "augusta",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 40.96875,
+          "y": 88,
+          "width": 462.25,
+          "height": 206.09375,
+          "bottom": 294.09375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 40.96875,
+          "y": 294.09375,
+          "width": 462.25,
+          "height": 247.75,
+          "bottom": 541.84375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 20.484375,
+          "y": 76,
+          "width": 1325.03125,
+          "height": 611,
+          "bottom": 687
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "aurelian",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 40.96875,
+          "y": 88,
+          "width": 462.25,
+          "height": 166.09375,
+          "bottom": 254.09375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 40.96875,
+          "y": 254.09375,
+          "width": 462.25,
+          "height": 247.75,
+          "bottom": 501.84375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 20.484375,
+          "y": 76,
+          "width": 1325.03125,
+          "height": 611,
+          "bottom": 687
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "fall",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 54.625,
+          "y": 88,
+          "width": 1100,
+          "height": 143.59375,
+          "bottom": 231.59375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 54.625,
+          "y": 306.78125,
+          "width": 510.625,
+          "height": 323.03125,
+          "bottom": 629.8125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 606.21875,
+          "y": 267.90625,
+          "width": 705.15625,
+          "height": 400.78125,
+          "bottom": 668.6875
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "legacy",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 40.96875,
+          "y": 88,
+          "width": 462.25,
+          "height": 166.09375,
+          "bottom": 254.09375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 40.96875,
+          "y": 254.09375,
+          "width": 462.25,
+          "height": 299.9375,
+          "bottom": 554.03125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 20.484375,
+          "y": 76,
+          "width": 1325.03125,
+          "height": 611,
+          "bottom": 687
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "id": "epilogue",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 54.625,
+          "y": 88,
+          "width": 1100,
+          "height": 143.59375,
+          "bottom": 231.59375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 54.625,
+          "y": 284.421875,
+          "width": 413.359375,
+          "height": 367.75,
+          "bottom": 652.171875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 508.953125,
+          "y": 259.765625,
+          "width": 802.421875,
+          "height": 417.046875,
+          "bottom": 676.8125
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "prologue",
+      "overflow": false,
+      "boxes": []
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "crisis",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 43.1875,
+          "y": 88,
+          "width": 487.296875,
+          "height": 270.453125,
+          "bottom": 358.453125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 43.1875,
+          "y": 358.453125,
+          "width": 487.296875,
+          "height": 322.203125,
+          "bottom": 680.65625
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 21.59375,
+          "y": 76,
+          "width": 1396.8125,
+          "height": 743,
+          "bottom": 819
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "palmyra",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 43.1875,
+          "y": 88,
+          "width": 487.296875,
+          "height": 191.375,
+          "bottom": 279.375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 43.1875,
+          "y": 279.375,
+          "width": 487.296875,
+          "height": 322.203125,
+          "bottom": 601.578125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 21.59375,
+          "y": 76,
+          "width": 1396.8125,
+          "height": 743,
+          "bottom": 819
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "rise",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 1100,
+          "height": 160.21875,
+          "bottom": 248.21875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 381.71875,
+          "width": 410.109375,
+          "height": 321.78125,
+          "bottom": 703.5
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 510.890625,
+          "y": 281.015625,
+          "width": 871.515625,
+          "height": 523.1875,
+          "bottom": 804.203125
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "expansion",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 43.1875,
+          "y": 88,
+          "width": 487.296875,
+          "height": 237.453125,
+          "bottom": 325.453125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 43.1875,
+          "y": 325.453125,
+          "width": 487.296875,
+          "height": 350.78125,
+          "bottom": 676.234375
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 21.59375,
+          "y": 76,
+          "width": 1396.8125,
+          "height": 743,
+          "bottom": 819
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "augusta",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 43.1875,
+          "y": 88,
+          "width": 487.296875,
+          "height": 237.453125,
+          "bottom": 325.453125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 43.1875,
+          "y": 325.453125,
+          "width": 487.296875,
+          "height": 293.625,
+          "bottom": 619.078125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 21.59375,
+          "y": 76,
+          "width": 1396.8125,
+          "height": 743,
+          "bottom": 819
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "aurelian",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 43.1875,
+          "y": 88,
+          "width": 487.296875,
+          "height": 237.453125,
+          "bottom": 325.453125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 43.1875,
+          "y": 325.453125,
+          "width": 487.296875,
+          "height": 293.625,
+          "bottom": 619.078125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 21.59375,
+          "y": 76,
+          "width": 1396.8125,
+          "height": 743,
+          "bottom": 819
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "fall",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 1100,
+          "height": 160.21875,
+          "bottom": 248.21875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 334.546875,
+          "width": 435.75,
+          "height": 425.515625,
+          "bottom": 760.0625
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 536.53125,
+          "y": 272.21875,
+          "width": 845.875,
+          "height": 550.1875,
+          "bottom": 822.40625
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "legacy",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 43.1875,
+          "y": 88,
+          "width": 487.296875,
+          "height": 191.375,
+          "bottom": 279.375
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 43.1875,
+          "y": 279.375,
+          "width": 487.296875,
+          "height": 350.78125,
+          "bottom": 630.15625
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 21.59375,
+          "y": 76,
+          "width": 1396.8125,
+          "height": 743,
+          "bottom": 819
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "id": "epilogue",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 57.59375,
+          "y": 88,
+          "width": 1100,
+          "height": 160.21875,
+          "bottom": 248.21875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 57.59375,
+          "y": 340.796875,
+          "width": 435.75,
+          "height": 403.625,
+          "bottom": 744.421875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 536.53125,
+          "y": 301.4375,
+          "width": 845.875,
+          "height": 482.328125,
+          "bottom": 783.765625
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "prologue",
+      "overflow": false,
+      "boxes": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "crisis",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 253,
+          "bottom": 542.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 566.953125,
+          "width": 691.21875,
+          "height": 599.328125,
+          "bottom": 1166.28125
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "palmyra",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 253,
+          "bottom": 542.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 566.953125,
+          "width": 691.21875,
+          "height": 627.1875,
+          "bottom": 1194.140625
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "rise",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 253,
+          "bottom": 542.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 566.953125,
+          "width": 691.21875,
+          "height": 587.65625,
+          "bottom": 1154.609375
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "expansion",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 253,
+          "bottom": 542.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 566.953125,
+          "width": 691.21875,
+          "height": 691.328125,
+          "bottom": 1258.28125
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "augusta",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 224.71875,
+          "bottom": 319.71875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 343.71875,
+          "width": 691.21875,
+          "height": 222,
+          "bottom": 565.71875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 614.71875,
+          "width": 691.21875,
+          "height": 631.6875,
+          "bottom": 1246.40625
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "aurelian",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 191,
+          "bottom": 480.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 504.953125,
+          "width": 691.21875,
+          "height": 814.828125,
+          "bottom": 1319.78125
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "fall",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 333,
+          "bottom": 622.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 646.953125,
+          "width": 691.21875,
+          "height": 481.5625,
+          "bottom": 1128.515625
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "legacy",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 253,
+          "bottom": 542.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 566.953125,
+          "width": 691.21875,
+          "height": 603.6875,
+          "bottom": 1170.640625
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "id": "epilogue",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 38.390625,
+          "y": 95,
+          "width": 691.21875,
+          "height": 170.953125,
+          "bottom": 265.953125
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 38.390625,
+          "y": 289.953125,
+          "width": 691.21875,
+          "height": 368,
+          "bottom": 657.953125
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 38.390625,
+          "y": 681.953125,
+          "width": 691.21875,
+          "height": 745.6875,
+          "bottom": 1427.640625
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "prologue",
+      "overflow": false,
+      "boxes": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "crisis",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 231.6875,
+          "bottom": 326.6875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 350.6875,
+          "width": 351,
+          "height": 408,
+          "bottom": 758.6875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 782.6875,
+          "width": 351,
+          "height": 503.5625,
+          "bottom": 1286.25
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "palmyra",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 197.1875,
+          "bottom": 292.1875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 316.1875,
+          "width": 351,
+          "height": 408,
+          "bottom": 724.1875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 748.1875,
+          "width": 351,
+          "height": 777.375,
+          "bottom": 1525.5625
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "rise",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 157.1875,
+          "bottom": 252.1875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 276.1875,
+          "width": 351,
+          "height": 439,
+          "bottom": 715.1875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 739.1875,
+          "width": 351,
+          "height": 1030.75,
+          "bottom": 1769.9375
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "expansion",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 231.6875,
+          "bottom": 326.6875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 350.6875,
+          "width": 351,
+          "height": 470,
+          "bottom": 820.6875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 844.6875,
+          "width": 351,
+          "height": 624.0625,
+          "bottom": 1468.75
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "augusta",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 197.1875,
+          "bottom": 292.1875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 316.1875,
+          "width": 351,
+          "height": 377,
+          "bottom": 693.1875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 742.1875,
+          "width": 351,
+          "height": 775.78125,
+          "bottom": 1517.96875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "aurelian",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 197.1875,
+          "bottom": 292.1875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 316.1875,
+          "width": 351,
+          "height": 377,
+          "bottom": 693.1875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 717.1875,
+          "width": 351,
+          "height": 844.0625,
+          "bottom": 1561.25
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "fall",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 214.1875,
+          "bottom": 309.1875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 333.1875,
+          "width": 351,
+          "height": 612,
+          "bottom": 945.1875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 969.1875,
+          "width": 351,
+          "height": 977.203125,
+          "bottom": 1946.390625
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "legacy",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 157.1875,
+          "bottom": 252.1875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 276.1875,
+          "width": 351,
+          "height": 501,
+          "bottom": 777.1875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 801.1875,
+          "width": 351,
+          "height": 628.28125,
+          "bottom": 1429.46875
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "id": "epilogue",
+      "overflow": false,
+      "boxes": [
+        {
+          "className": "chapter-heading reveal",
+          "x": 19.5,
+          "y": 95,
+          "width": 351,
+          "height": 231.6875,
+          "bottom": 326.6875
+        },
+        {
+          "className": "chapter-copy reveal",
+          "x": 19.5,
+          "y": 350.6875,
+          "width": 351,
+          "height": 523,
+          "bottom": 873.6875
+        },
+        {
+          "className": "chapter-art reveal",
+          "x": 19.5,
+          "y": 897.6875,
+          "width": 351,
+          "height": 943.78125,
+          "bottom": 1841.46875
+        }
+      ]
+    }
+  ]
+}
