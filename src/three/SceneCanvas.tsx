@@ -31,7 +31,7 @@ function Dust() {
 function Coin({ face, inspection, spinning, reduced }: { face: number; inspection: number; spinning: boolean; reduced: boolean }) {
   const ref = useRef<Group>(null);
   const { camera, invalidate, controls } = useThree();
-  const [obverse, reverse] = useLoader(TextureLoader, ['/images/coin-obverse.webp', '/images/coin-reverse.webp']);
+  const [obverse, reverse] = useLoader(TextureLoader, ['/zenobia-v2/images/coin-obverse.webp', '/zenobia-v2/images/coin-reverse.webp']);
   const geometry = useMemo(() => {
     const geo = new CylinderGeometry(2.5, 2.5, .16, 128, 1, false);
     const pos = geo.attributes.position as BufferAttribute;

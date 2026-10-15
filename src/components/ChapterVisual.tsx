@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import Image from './StaticImage';
 import { useState } from 'react';
 import { ArrowRight, Check, RotateCcw } from 'lucide-react';
 import dynamic from 'next/dynamic';

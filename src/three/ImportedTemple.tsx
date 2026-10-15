@@ -3,11 +3,12 @@ import { useThree } from '@react-three/fiber';
 import { useEffect } from 'react';
 import { Mesh } from 'three';
 import { StoneMaterial } from './StoneMaterial';
+import { assetPath } from '@/lib/asset-path';
 
 // Giovanni De Gasperis & A. Cordisco, derived from #NEWPALMYRA, CC BY 4.0.
 // 1,551 source objects merged to a single mesh by scripts/convert-temple.mjs.
 export function ImportedTemple() {
-  const { scene } = useGLTF('/models/temple-bel.glb');
+  const { scene } = useGLTF(assetPath('/models/temple-bel.glb'));
   const mesh = scene.children[0] as Mesh;
   const gl = useThree(s => s.gl);
   useEffect(() => { gl.domElement.setAttribute('data-external-model', 'temple-bel'); }, [gl]);

@@ -1,6 +1,6 @@
 'use client';
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
+import Image from './StaticImage';
 import { Component, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Box, RotateCcw } from 'lucide-react';
 
