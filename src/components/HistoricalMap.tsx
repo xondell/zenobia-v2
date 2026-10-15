@@ -1,8 +1,9 @@
 'use client';
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useCallback, useEffect, useId, useMemo, useState } from 'react';
 import { geoGraticule10, geoMercator, geoPath, type GeoPermissibleObjects } from 'd3-geo';
 import { Pause, Play, RotateCcw } from 'lucide-react';
 import land from '@/data/geo/land.json';
+import { MapPopover } from './MapPopover';
 
 const geographicProjection = geoMercator().center([20, 36]).scale(760).translate([500, 270]);
 // Node and browser trig implementations differ at ~1e-13. Round SVG values
@@ -26,6 +27,11 @@ const regions = [
   { name: 'Сирия', coords: [42, 33.5], text: 'Сирия была основой пальмирского влияния на римском Востоке.' },
   { name: 'Египет', coords: [30, 26.8], text: 'Богатая провинция и важнейший поставщик зерна. Контроль Пальмиры датируется 270 годом; в отдельных обзорах встречается 269.' },
 ];
+const campaignStages = [
+  { ...cities[2], label: '01 · ИММЫ', text: 'В 272 году Аврелиан победил пальмирские войска у Имм, близ Антиохии. Зенобия отступила на юг.' },
+  { ...cities[4], label: '02 · ЭМЕСА', text: 'У Эмесы в 272 году римляне вновь разгромили войска Зенобии. После поражения она отступила к Пальмире.' },
+  { ...cities[1], label: '03 · ПАЛЬМИРА', text: 'В 272 году Пальмира капитулировала, а Зенобия была захвачена при попытке покинуть город. Государство потеряло самостоятельность.' },
+];
 const yearText: Record<number, string> = {
   267: 'Регентство Зенобии. Основа власти — Пальмира и римский Восток.',
   268: 'Укрепление влияния. Точные изменения контроля по годам не установлены.',
@@ -45,6 +51,11 @@ export default function HistoricalMap({ mode = 'expansion' }: { mode?: 'crisis' 
   const [year, setYear] = useState(mode === 'campaign' ? 272 : 267);
   const [playing, setPlaying] = useState(false);
   const [selected, setSelected] = useState<{ name: string; text: string; coords: number[] } | null>(null);
+  const closeDetail = useCallback(() => setSelected(null), []);
+  const select = (item: typeof cities[number]) => {
+    const detail = mode === 'campaign' ? campaignStages.find(stage => stage.name === item.name) ?? item : item;
+    setSelected(previous => previous?.name === item.name ? null : detail);
+  };
   const id = useId().replaceAll(':', '');
   const zoom = selected ? 1.22 : 1;
   const center = selected ? project(selected.coords) : [500, 270];
@@ -63,24 +74,26 @@ export default function HistoricalMap({ mode = 'expansion' }: { mode?: 'crisis' 
     <div className="map-topline"><span className="eyebrow">{mode === 'campaign' ? 'КАМПАНИЯ АВРЕЛИАНА' : 'АТЛАС ДРЕВНЕГО МИРА'}</span><button className="icon-button" aria-label="Вернуться к общей карте" onClick={() => { setSelected(null); setPlaying(false); setYear(mode === 'campaign' ? 272 : 267); }}><RotateCcw size={16} /></button></div>
     <svg viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid slice" className="map-svg" aria-label="Карта Средиземноморья с историческими городами">
       <defs><clipPath id={`map-clip-${id}`}><rect width="1000" height="560" /></clipPath><clipPath id={`land-${id}`}><path d={landPath} /></clipPath><pattern id={`hatch-${id}`} width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><line y2="9" stroke="#d6ad73" strokeWidth="2" opacity=".35" /></pattern></defs>
-      <g clipPath={`url(#map-clip-${id})`}><rect width="1000" height="560" fill="#0f1b23" /><g className="map-camera" transform={transform}>
-        <path d={graticule} fill="none" stroke="#adc2c3" strokeWidth=".5" opacity=".1" />
-        <path d={landPath} fill="#262b2b" stroke="#5c635e" strokeWidth="1" />
-        <g clipPath={`url(#land-${id})`}><polygon points={roman} fill="#653b37" opacity=".68" />
+      <g clipPath={`url(#map-clip-${id})`}><rect width="1000" height="560" fill="#e1eae7" /><g className="map-camera" transform={transform}>
+        <path d={graticule} fill="none" stroke="#708e8c" strokeWidth=".5" opacity=".25" />
+        <path d={landPath} fill="#ded8c8" stroke="#8c8a79" strokeWidth="1" />
+        <g clipPath={`url(#land-${id})`}><polygon points={roman} fill="#b17b6c" opacity=".48" />
           <polygon points={syria} className="palmyrene-area" fill={year === 272 ? `url(#hatch-${id})` : '#b18b51'} opacity=".9" />
           <polygon points={egypt} className="palmyrene-area" fill={year >= 270 && year < 272 ? '#b18b51' : year === 272 ? `url(#hatch-${id})` : 'transparent'} opacity=".9" />
           <polygon points={anatolia} className="palmyrene-area" fill={year >= 271 && year < 272 ? '#b18b51' : year === 272 ? `url(#hatch-${id})` : 'transparent'} opacity=".9" />
         </g>
         <text x="375" y="340" className="sea-label" transform="rotate(-13 375 340)">СРЕДИЗЕМНОЕ МОРЕ</text>
-        {regions.map(region => { const p = projection(region.coords)!; return <g key={region.name} role="button" tabIndex={0} aria-label={`Регион ${region.name}`} className="map-region" onClick={() => setSelected(region)} onKeyDown={e => { if (['Enter', ' '].includes(e.key)) { e.preventDefault(); setSelected(region); } }}><title>{region.text}</title><rect x={p[0] - 65} y={p[1] - 19} width="130" height="29" fill="transparent" /><text x={p[0]} y={p[1]}>{region.name.toUpperCase()}</text></g>; })}
-        {(year >= 270 || mode === 'campaign') && mode !== 'crisis' && <path className="campaign-route" d={route} fill="none" stroke={year === 272 ? '#e4a395' : '#ead1a2'} strokeWidth="2" strokeDasharray="5 6" />}
-        {cities.map((city, i) => { const p = projection(city.coords)!; return <g key={city.name} role="button" tabIndex={0} aria-label={city.name} className={`map-city city-${i}`} onClick={() => setSelected(city)} onKeyDown={e => { if (['Enter', ' '].includes(e.key)) { e.preventDefault(); setSelected(city); } }}><title>{city.text}</title><circle cx={p[0]} cy={p[1]} r="15" fill="transparent" /><circle cx={p[0]} cy={p[1]} r={i === 1 ? 6 : 4} fill={i === 1 ? '#f6d69f' : '#efe0c6'} /><circle cx={p[0]} cy={p[1]} r="10" fill="none" stroke="#d6ad73" opacity=".45" /><text x={p[0] + (i === 4 ? -12 : 14)} y={p[1] + (i === 2 ? -18 : i === 4 ? 27 : -7)} textAnchor={i === 4 ? 'end' : 'start'}>{city.name}</text></g>; })}
+        {regions.map(region => { const p = projection(region.coords)!; return <g key={region.name} role="button" tabIndex={0} aria-label={`Регион ${region.name}`} aria-expanded={selected?.name === region.name} data-selected={selected?.name === region.name} className="map-region" onClick={() => select(region)} onKeyDown={e => { if (['Enter', ' '].includes(e.key)) { e.preventDefault(); select(region); } }}><title>{region.text}</title><rect x={p[0] - 65} y={p[1] - 19} width="130" height="29" fill="transparent" /><text x={p[0]} y={p[1]}>{region.name.toUpperCase()}</text></g>; })}
+        {(year >= 270 || mode === 'campaign') && mode !== 'crisis' && <path className="campaign-route" d={route} fill="none" stroke={year === 272 ? '#914f3d' : '#704820'} strokeWidth="3" strokeDasharray="5 6" />}
+        {cities.map((city, i) => { const p = projection(city.coords)!; return <g key={city.name} role="button" tabIndex={0} aria-label={city.name} aria-expanded={selected?.name === city.name} data-selected={selected?.name === city.name} className={`map-city city-${i}`} onClick={() => select(city)} onKeyDown={e => { if (['Enter', ' '].includes(e.key)) { e.preventDefault(); select(city); } }}><title>{city.text}</title><circle cx={p[0]} cy={p[1]} r="15" fill="transparent" /><circle cx={p[0]} cy={p[1]} r={i === 1 ? 6 : 4} fill={i === 1 ? '#8e622d' : '#39352f'} /><circle cx={p[0]} cy={p[1]} r="10" fill="none" stroke="#8e622d" opacity=".7" /><text x={p[0] + (i === 4 ? -12 : 14)} y={p[1] + (i === 2 ? -18 : i === 4 ? 27 : -7)} textAnchor={i === 4 ? 'end' : 'start'}>{city.name}</text></g>; })}
         <text x="55" y="510" className="map-north">N ↑</text>
       </g></g>
     </svg>
     <div className="map-legend"><span><i className="roman-dot" />Римский мир</span><span><i className="palmyra-dot" />Пальмирский контроль</span>{year === 272 && <span>Штриховка — утраченные владения</span>}</div>
     {mode === 'expansion' && <div className="map-timeline"><div className="year-display"><strong>{year}</strong><span>ГОД Н. Э.</span><button onClick={() => setPlaying(p => !p)} aria-label={playing ? 'Остановить хронологию' : 'Воспроизвести хронологию'}>{playing ? <Pause size={16} /> : <Play size={16} />}</button></div><div className="year-slider"><input aria-label="Год на исторической карте" type="range" min="267" max="272" step="1" value={year} onChange={e => { setYear(Number(e.target.value)); setPlaying(false); }} /><div>{[267, 268, 269, 270, 271, 272].map(y => <button key={y} onClick={() => { setYear(y); setPlaying(false); }} aria-pressed={year === y}>{y}</button>)}</div></div></div>}
-    <p className="map-event" aria-live="polite">{selected ? <span className="map-detail"><b>{selected.name}.</b> {selected.text}</span> : mode === 'crisis' ? 'Нажмите на город или регион, чтобы узнать его значение.' : yearText[year]}</p>
+    {selected && <MapPopover name={selected.name} text={selected.text} onClose={closeDetail} />}
+    {mode === 'campaign' && <div className="battle-stages" role="group" aria-label="Этапы кампании">{campaignStages.map(stage => <button key={stage.label} aria-pressed={selected?.name === stage.name} onClick={() => select(stage)}>{stage.label}</button>)}</div>}
+    <p className="map-event" aria-live="polite"><span key={year} className="exhibit-enter">{mode === 'crisis' ? 'Нажмите на город или регион, чтобы узнать его значение.' : yearText[year]}</span></p>
     <p className="map-disclaimer">Береговая линия — Natural Earth. Зоны влияния и направления походов схематичны; точные границы и ежегодные изменения известны не полностью.</p>
   </div>;
 }

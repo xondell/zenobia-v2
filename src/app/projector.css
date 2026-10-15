@@ -1,0 +1,268 @@
+/* Projection system, imported after the original reader stylesheet. */
+:root { --background:#f7f5f0; --elevated:#fff; --gold:#8e622d; --gold-light:#704820; --ivory:#151515; --muted:#47423e; --line:#cfc7ba; }
+html { scrollbar-color:#8e622d #f7f5f0; }
+body { background:#f7f5f0; color:#151515; }
+.experience { --panel:rgba(255,255,255,.94); --shadow:0 12px 50px #57452a14; }
+.experience button:focus-visible,.experience a:focus-visible,.experience [tabindex]:focus-visible { outline:3px solid #8e622d; }
+.experience .site-header { height:64px; padding-inline:3vw; background:#f7f5f0ed; border-color:var(--line); gap:24px; }
+.experience .site-header nav { gap:24px; }
+.experience .site-header nav button { font-size:15px; min-height:42px; }
+.experience .header-caption { color:var(--muted); font-size:11px; }
+.experience .site-header .presentation-button { color:var(--gold); padding:7px 14px; }
+.experience .chapter { background:#f7f5f0; padding:100px 5vw 80px; border-color:var(--line); }
+.experience .chapter-prologue { padding:0; }
+.experience .chapter-heading h2 { font-size:clamp(42px,3.7vw,72px); line-height:1; }
+.experience .eyebrow { font-size:14px; letter-spacing:2px; }
+.experience .chapter-kicker { color:var(--muted); font-size:15px; margin:8px 0; }
+.experience .toggle-copy { display:none; }
+.experience .chapter-subtitle { color:var(--gold); font-size:clamp(23px,1.65vw,32px); margin-top:10px; }
+.experience .chapter-layout { grid-template-columns:.85fr 1.65fr; gap:3vw; margin-top:24px; }
+.experience .chapter-copy>p,.experience.presenting .chapter-copy>p { font-size:clamp(18px,1.28vw,26px); line-height:1.55; color:#292622; max-width:none; margin-bottom:18px; }
+.experience .source-links { margin-top:16px; padding-top:10px; }
+.experience .source-links a { font-size:13px; color:#704820; text-decoration:underline; text-underline-offset:3px; }
+.experience .chapter-rail { right:10px; background:#fffffff2; border:1px solid var(--line); border-radius:30px; padding:12px 8px; box-shadow:var(--shadow); }
+.experience .chapter-rail button { font-size:11px; color:#47423e; }
+.experience .chapter-rail button[aria-current] { color:#704820; }
+.experience .rail-label { background:#fff; border:1px solid var(--line); }
+.experience .hero-visual { opacity:1; }
+.experience .hero-shade { background:linear-gradient(0deg,#251c16a8,transparent 35%),linear-gradient(90deg,#201b1580,#241c1838,#201b1566); }
+.experience .hero-content { color:#fff6e6; }
+.experience .hero-latin { font-size:13px; }
+.experience .hero-eyebrow { font-size:13px; color:#fff3dc; }
+.experience .hero-subtitle { color:#fff3dc; }
+.experience .hero-date { color:#fff3dc; font-size:30px; }
+.experience .hero-date small { font-size:13px; }
+.experience .begin-button { color:#191510; background:#fff8ecf2; font-size:18px; padding:16px 28px; border-color:#fff6e6; }
+.experience .hero-bottom { color:#fff5df; font-size:12px; }
+.experience .hero-bottom small,.experience .scroll-cue { color:#fff5df; font-size:11px; }
+.experience .hero-edition { display:none; }
+.experience .historical-map { background:#e7ede9; border-color:var(--line); }
+.experience .map-topline .eyebrow { color:var(--muted); font-size:13px; }
+.experience .map-city text { fill:#181714; stroke:#f7f5f0; stroke-width:4px; font-size:16px; }
+.experience .map-city:hover text,.experience .map-city:focus text { fill:#804318; }
+.experience .map-region text { fill:#463c31; opacity:1; font-size:14px; letter-spacing:1px; }
+.experience .sea-label { fill:#365966; opacity:.85; }
+.experience .map-legend { font-size:16px; color:#39352f; }
+.experience .map-event { font-size:clamp(19px,1.3vw,26px); color:#292622; line-height:1.5; }
+.experience .map-disclaimer { color:#514a42; font-size:12px; }
+.experience .map-timeline { background:var(--panel); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); backdrop-filter:blur(14px); }
+.experience .year-display strong { color:var(--gold); font-size:64px; }
+.experience .year-display>span { color:var(--muted); font-size:12px; }
+.experience .year-slider>div { font-size:20px; color:#47423e; }
+.experience .year-slider button { padding:8px; }
+.experience .scene-stage,.experience .scene-coin .scene-stage { background:#eee8dd; }
+.experience .scene-stage { isolation:isolate; z-index:0; }
+.experience .scene-fallback.coin-poster { background:#eee8dd; }
+.experience .scene-toolbar,.experience .coin-legends,.experience .object-detail,.experience .hotspot-list,.experience .scene-caption { position:relative; z-index:2; }
+.experience .scene-toolbar { gap:8px; }
+.experience .scene-information { display:flex; flex-direction:column; gap:12px; }
+.experience .scene-toolbar>button:not(.icon-button) { font-size:17px; padding:10px 14px; background:#fffffff0; border-radius:8px; color:#292622; }
+.experience .scene-toolbar button[aria-pressed=true] { background:#e8dcc9; color:#603d16; }
+.experience .scene-caption { font-size:12px; color:#514a42; margin:8px 0; }
+.experience .scene-loading,.experience .loading-map { background:#fff5e5; color:#47423e; font-size:18px; }
+.experience .scene-hotspot { background:#fffef7f2; color:#342718; font-size:17px; border-radius:40px; box-shadow:var(--shadow); }
+.experience .hotspot-list button { font-size:19px; padding:14px 8px; }
+.experience .object-detail { font-size:clamp(20px,1.35vw,27px); line-height:1.5; padding:20px; background:var(--panel); border:1px solid var(--line); color:#292622; border-radius:14px; box-shadow:var(--shadow); }
+.experience .coin-legends { gap:12px; }
+.experience .coin-legends button { font-size:clamp(18px,1.4vw,27px); color:#603d16; background:#fffdf5; padding:16px 20px; border:1px solid var(--line); border-radius:12px; }
+.experience .coin-legends button[aria-pressed=true] { border-color:var(--gold); background:#efe3cf; }
+.experience .augusta-word,.experience .crisis-stat { display:none; }
+.experience .family-tree button { color:#292622; background:#fff; font-size:clamp(26px,2vw,40px); padding:14px 18px; border-color:var(--line); border-radius:10px; }
+.experience .family-tree button[aria-pressed=true] { color:#704820; background:#eee2cd; border-color:#8e622d; }
+.experience .family-tree small { color:#514a42; font-size:13px; }
+.experience .family-tree>.eyebrow { font-size:14px; margin-bottom:16px; }
+.experience .person-detail { color:#292622; font-size:clamp(18px,1.2vw,24px); line-height:1.5; padding:16px; background:#fff; border:1px solid var(--line); border-radius:12px; }
+.experience .mini-timeline span { font-size:13px; color:#47423e; }
+.experience .mini-timeline b { color:#704820; font-size:26px; }
+.experience .portrait img { height:52vh; }
+.experience figcaption { color:#514a42; font-size:12px; }
+.experience .portrait-name { color:#704820; }
+.experience .rivals { padding:12px 20px; background:#fff9; border:1px solid var(--line); border-radius:12px; gap:18px; }
+.experience .rivals span { color:#704820; font-size:18px; }
+.experience .rivals>div:last-child span { color:#914f3d; }
+.experience .rivals h3 { font-size:28px; }
+.experience .rivals small { color:#47423e; font-size:14px; }
+.experience .battle-stages { color:#704820; font-size:16px; }
+.experience .battle-stages button { padding:10px 14px; border-radius:8px; }
+.experience .battle-stages button[aria-pressed=true] { background:#e6dac6; color:#603d16; }
+.experience .investigation h3 { font-size:36px; }
+.experience .investigation .eyebrow { font-size:12px; }
+.experience .version-tabs button { font-size:36px; padding:10px 18px; color:#47423e; }
+.experience .version-tabs button[aria-selected=true] { color:#704820; background:#eee2cd; }
+.experience .investigation [role=tabpanel]>small { color:#704820; font-size:13px; }
+.experience .investigation [role=tabpanel]>p { color:#292622; font-size:clamp(18px,1.2vw,24px); line-height:1.5; }
+.experience .investigation [role=tabpanel]>a { color:#704820; font-size:16px; }
+.experience .schmalz img { max-height:55vh; }
+.experience .comparison-switch { position:relative; display:flex; isolation:isolate; gap:0; background:#fffffff0; backdrop-filter:blur(20px); border:1px solid #cfc7ba; border-radius:40px; padding:6px; box-shadow:0 10px 40px #30231626; }
+.experience .comparison-switch::before { content:''; position:absolute; inset:6px auto 6px 6px; width:calc(50% - 6px); border-radius:30px; background:#e6dac6; z-index:-1; transition:transform .4s cubic-bezier(.22,1,.36,1); }
+.experience .comparison-switch[data-mode=city]::before { transform:translateX(100%); }
+.experience .comparison-switch button { flex:1; color:#292622; border:0; padding:12px 18px; font-size:17px; white-space:nowrap; }
+.experience .comparison-switch button[aria-pressed=true] { color:#603d16; font-weight:700; }
+.experience .gallery-image { background:#eee8dd; }
+.experience .gallery-image figcaption { background:#fff8eced; color:#39352f; padding:18px 24px; }
+.experience .gallery-image h3 { color:#151515; font-size:36px; }
+.experience .comparison-note { font-size:13px; color:#47423e; }
+.experience .gallery-controls { font-size:15px; color:#603d16; }
+.experience .gallery-controls button { font-size:18px; border-color:var(--line); border-radius:8px; }
+.experience .gallery-controls button[aria-pressed=true] { color:#603d16; background:#eee2cd; }
+.experience .quiz-open { font-size:36px; }
+.experience .quiz-open>span { color:#47423e; font-size:17px; }
+.experience .quiz h3 { font-size:36px; }
+.experience .quiz-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.experience .quiz-heading button { font-size:14px; padding:8px 10px; }
+.experience .quiz p:not(.eyebrow) { font-size:20px; color:#292622; }
+.experience .quiz button { font-size:20px; padding:14px 20px; background:#fff; border-radius:10px; }
+.experience .quiz button.correct { color:#285322; background:#edf4e7; border-color:#53854a; }
+.experience .closing-actions { font-size:18px; gap:14px; }
+.experience .gold-button { color:#fff; font-size:18px; }
+.experience .modal { background:#fffcf7; }
+.experience .modal::backdrop { background:#30271999; }
+.experience .modal-intro,.experience .sources-list article>p,.experience .sources-list article>small,.experience .asset-credits p { color:#39352f; font-size:17px; }
+.experience .sources-list article>a,.experience .asset-credits a { color:#704820; font-size:19px; }
+.experience .chapter-menu small { color:#514a42; font-size:11px; }
+.experience .presentation-controls { height:68px; padding:8px 3vw; background:#f7f5f0f5; gap:24px; }
+.experience .chapter-status b { color:#704820; }
+.experience .chapter-status>span { font-size:16px; max-width:320px; }
+.experience .presentation-controls>button:not(.icon-button) { font-size:16px; color:#47423e; }
+.experience .icon-button { min-width:44px; min-height:44px; }
+.experience .speaker-notes { background:#fffdf6fa; border-color:var(--line); box-shadow:var(--shadow); bottom:80px; }
+.experience .speaker-notes>p { font-size:22px; color:#292622; }
+.experience .speaker-notes>small { font-size:14px; color:#47423e; }
+.experience .notice { background:#fffdf7; font-size:17px; }
+
+@media(min-width:1000px) and (orientation:landscape) {
+  .experience.presenting .chapter { height:100svh; padding:88px 4vw 86px; overflow:hidden; }
+  .experience.presenting .chapter-prologue { padding:0; }
+  .experience .chapter-immersive { height:100svh; min-height:820px; padding:92px 3vw 80px; isolation:isolate; }
+  .experience.presenting .chapter-immersive { min-height:0; padding:88px 3vw 86px; }
+  .experience .chapter-immersive .chapter-heading { width:36%; max-width:640px; padding:20px 24px; border:1px solid #cfc7ba99; border-bottom:0; border-radius:18px 18px 0 0; background:var(--panel); }
+  .experience .chapter-immersive .toggle-copy { display:block; position:absolute; top:8px; right:12px; font-size:13px; min-height:36px; color:#704820; text-decoration:underline; text-underline-offset:3px; }
+  .experience .chapter-immersive.text-collapsed .chapter-heading { width:max-content; padding:8px 12px; border:1px solid var(--line); border-radius:12px; }
+  .experience .chapter-immersive.text-collapsed .chapter-heading>:not(.toggle-copy) { display:none; }
+  .experience .chapter-immersive.text-collapsed .toggle-copy { position:static; }
+  .experience .chapter-immersive.text-collapsed .chapter-copy { display:none; }
+  .experience .chapter-immersive .chapter-heading h2 { font-size:clamp(40px,3.2vw,64px); }
+  .experience .chapter-immersive .chapter-subtitle { font-size:clamp(22px,1.5vw,30px); }
+  .experience .chapter-immersive .chapter-layout { display:contents; }
+  .experience .chapter-immersive .chapter-copy { position:relative; z-index:3; width:36%; max-width:640px; background:var(--panel); padding:8px 24px 20px; border:1px solid #cfc7ba99; border-top:0; border-radius:0 0 18px 18px; box-shadow:var(--shadow); }
+  .experience .chapter-immersive .chapter-art { position:absolute; inset:76px 1.5vw 80px; max-width:none; max-height:none; z-index:-1; }
+  .experience .chapter-immersive .historical-map { width:100%; height:100%; border-radius:20px; overflow:hidden; }
+  .experience .chapter-immersive .map-svg { width:100%; height:100%; position:absolute; inset:0; }
+  .experience .chapter-immersive .map-topline { position:absolute; top:10px; right:16px; z-index:2; gap:24px; }
+  .experience .chapter-immersive .map-legend { position:absolute; top:62px; right:25px; padding:0; }
+  .experience .chapter-immersive .map-disclaimer { position:absolute; bottom:12px; left:25px; right:25px; padding:0; }
+  .experience .chapter-immersive .map-event { position:absolute; bottom:44px; left:41%; right:25px; background:var(--panel); border:1px solid var(--line); border-radius:12px; min-height:0; }
+  .experience .chapter-expansion .map-timeline { position:absolute; bottom:140px; left:41%; right:25px; padding:12px 22px; }
+  .experience .chapter-immersive .scene-slot { height:100%; }
+  .experience .chapter-immersive .scene-stage { position:absolute; inset:0; height:auto; border-radius:20px; }
+  .experience .chapter-immersive .scene-toolbar { position:absolute; top:14px; right:20px; max-width:58%; background:#fffdf5e8; border:1px solid var(--line); border-radius:12px; padding:8px; }
+  .experience .chapter-immersive .scene-caption { position:absolute; bottom:4px; left:24px; right:24px; padding:5px 10px; background:#fffdf3eb; border-radius:6px; }
+  .experience .chapter-immersive .scene-information { position:absolute; left:41%; right:24px; bottom:44px; z-index:2; }
+  .experience .chapter-immersive .hotspot-list,.experience .chapter-immersive .coin-legends { background:#fffffff0; padding:0 10px; border-radius:12px; }
+  .experience .chapter-immersive .object-detail { min-height:100px; }
+  .experience .chapter-augusta .scene-caption { right:24px; }
+  .experience .chapter-aurelian .confrontation { height:100%; }
+  .experience .chapter-aurelian .rivals { position:absolute; z-index:2; right:20px; top:20px; width:53%; }
+  .experience .chapter-aurelian .map-topline { top:135px; }
+  .experience .chapter-aurelian .map-legend { top:190px; }
+  .experience .chapter-aurelian .battle-stages { position:absolute; right:25px; left:42%; bottom:155px; background:#fffdf6e8; padding:12px 18px; border-radius:12px; }
+  .experience .legacy-visual { height:100%; }
+  .experience .legacy-city { height:100%; }
+  .experience .chapter-augusta .webgl-canvas,.experience .chapter-augusta .scene-fallback { left:32%!important; width:68%!important; height:calc(100% - 180px)!important; }
+  .experience .comparison-switch { position:absolute; top:16px; left:41%; right:24px; z-index:5; }
+  .experience .legacy-visual>.scene-slot,.experience .gallery-image { position:absolute; inset:0; height:100%; border-radius:20px; overflow:hidden; }
+  .experience .gallery-image img { height:100%; object-fit:cover; }
+  .experience .gallery-1 img,.experience .gallery-2 img { object-fit:contain; padding-left:38%; }
+  .experience .gallery-image figcaption { left:41%; width:auto; right:24px; bottom:100px; border-radius:12px; }
+  .experience .comparison-note { position:absolute; bottom:48px; left:24px; right:24px; background:#fffdf3ed; padding:8px 12px; border-radius:8px; }
+  .experience .gallery-controls { position:absolute; bottom:8px; left:24px; right:24px; background:#fffdf3ed; padding:8px 12px; border:0; border-radius:8px; }
+  .experience .legacy-visual .scene-toolbar { top:90px; }
+  .experience .legacy-visual .scene-caption { bottom:100px; }
+  .experience .legacy-visual .scene-information { bottom:140px; }
+  .experience.presenting .chapter-rise .chapter-layout { grid-template-columns:.8fr 1.7fr; }
+  .experience.presenting .chapter-fall .chapter-layout { grid-template-columns:.85fr 1.65fr; }
+  .experience.presenting .chapter-epilogue .scene-stage { height:25vh; }
+  .experience .epilogue-visual:has(.quiz) .scene-stage { height:16vh; }
+  .experience .epilogue-visual:has(.quiz) .scene-toolbar,.experience .epilogue-visual:has(.quiz) .scene-caption,.experience .epilogue-visual:has(.quiz) .coin-legends,.experience .epilogue-visual:has(.quiz) .object-detail { display:none; }
+}
+@media(min-width:1000px) and (max-height:820px) and (orientation:landscape) {
+  .experience .chapter-immersive .chapter-heading { padding:16px 18px; }
+  .experience .chapter-immersive .toggle-copy { top:4px; font-size:11px; }
+  .experience .chapter-immersive .chapter-copy { padding:0 18px 14px; }
+  .experience .chapter-immersive .chapter-heading h2 { font-size:40px; }
+  .experience .chapter-immersive .chapter-kicker { font-size:13px; }
+  .experience .chapter-immersive .chapter-subtitle { font-size:22px; }
+  .experience .chapter-copy>p,.experience.presenting .chapter-copy>p { font-size:18px; line-height:1.45; margin-bottom:12px; }
+  .experience .chapter-heading h2 { font-size:46px; }
+  .experience .chapter-heading .eyebrow { font-size:12px; line-height:1.4; }
+  .experience .chapter-kicker { margin:4px 0; }
+  .experience .chapter-subtitle { margin-top:6px; }
+  .experience.presenting .chapter-fall .chapter-layout { grid-template-columns:1.05fr 1.45fr; }
+  .experience .chapter-expansion .map-timeline { bottom:110px; padding:8px 16px; }
+  .experience .chapter-expansion .year-display strong { font-size:50px; }
+  .experience .chapter-immersive .map-event { padding:8px 16px; }
+  .experience .chapter-immersive .map-event { font-size:20px; }
+  .experience .chapter-immersive .object-detail { font-size:20px; min-height:85px; }
+  .experience .family-tree button { font-size:26px; padding:10px; }
+  .experience .family-tree>.eyebrow { font-size:12px; margin-bottom:8px; }
+  .experience .family-branch { height:18px; }
+  .experience .person-detail { font-size:18px; margin-top:10px; padding:12px; line-height:1.45; }
+  .experience .mini-timeline { padding-top:10px; }
+  .experience .closing-actions { gap:10px; margin-top:18px; }
+  .experience .portrait img { height:39vh; }
+  .experience .investigation [role=tabpanel]>p { font-size:18px; }
+  .experience .investigation h3 { font-size:28px; margin:8px 0; }
+  .experience .investigation [role=tabpanel]>small { font-size:11px; }
+  .experience .schmalz img { max-height:45vh; }
+  .experience .quiz h3 { font-size:28px; }
+  .experience .quiz button { font-size:17px; padding:10px 14px; }
+  .experience .quiz-heading button { font-size:14px; padding:8px; }
+  .experience .epilogue-visual:not(:has(.quiz)) .scene-stage { height:21vh; }
+  .experience .version-tabs button { font-size:30px; padding:8px 14px; }
+}
+@media(max-width:999px),(orientation:portrait) {
+  .experience .chapter,.experience.presenting .chapter { height:auto; min-height:100svh; padding:95px 5vw 100px; overflow:clip; }
+  .experience .chapter-prologue,.experience.presenting .chapter-prologue { height:100svh; padding:0; }
+  .experience .chapter-layout,.experience.presenting .chapter-layout { display:grid; grid-template-columns:1fr; gap:24px; }
+  .experience .chapter-art { max-width:none; }
+  .experience .chapter-heading h2 { font-size:clamp(40px,7vw,60px); }
+  .experience .chapter-copy>p,.experience.presenting .chapter-copy>p { font-size:20px; }
+  .experience .scene-stage,.experience.presenting .scene-stage { height:440px; }
+  .experience .scene-hero .scene-stage { height:100%; }
+  .experience .map-svg { height:auto; min-height:260px; }
+  .experience .map-timeline { gap:10px; padding:14px 10px; }
+  .experience .year-display strong { font-size:44px; }
+  .experience .year-slider>div { font-size:15px; }
+  .experience .year-slider button { padding:6px 0; }
+  .experience .comparison-switch button { font-size:15px; white-space:normal; }
+  .experience .chapter-status>span { font-size:12px; max-width:140px; }
+  .experience .presentation-controls { gap:8px; padding:8px; }
+  .experience .presentation-controls>button:not(.icon-button) { font-size:12px; padding-left:8px; }
+}
+@media(max-width:480px) {
+  .experience .site-header { padding-inline:16px; gap:12px; }
+  .experience .site-header nav { gap:12px; }
+  .experience .header-caption { display:none; }
+  .experience .hero-eyebrow { font-size:8px; }
+  .experience .hero-latin { font-size:8px; letter-spacing:3px; }
+  .experience .hero-date { font-size:24px; }
+  .experience .hero-date small { font-size:10px; }
+  .experience .scene-toolbar>button:not(.icon-button) { font-size:15px; padding:10px; }
+  .experience .hotspot-list { flex-wrap:wrap; }
+  .experience .hotspot-list button { font-size:16px; min-width:40%; }
+  .experience .coin-legends { flex-direction:column; }
+  .experience .biography-visual,.experience .fall-visual { grid-template-columns:1fr; }
+  .experience .gallery-image img { height:380px; }
+  .experience .family-tree small { font-size:12px; }
+  .experience .version-tabs button span { font-size:12px; }
+  .experience .quiz-options { flex-direction:column; }
+}
+@keyframes exhibit-in { from { opacity:.25; transform:translateY(14px); } to { opacity:1; transform:none; } }
+.experience .exhibit-enter { animation:exhibit-in .45s both; }
+.experience .map-popover { position:absolute; z-index:8; left:var(--popover-x,50%); top:var(--popover-y,30%); width:min(440px,calc(100% - 32px)); background:#fffdf6fa; color:#292622; border:1px solid #b5a58c; border-radius:16px; box-shadow:0 16px 60px #4b3b2c30; padding:22px 26px; }
+.experience .map-popover h3 { font-size:36px; padding-right:24px; margin-bottom:8px; }
+.experience .map-popover p { font-size:clamp(20px,1.3vw,26px); line-height:1.5; }
+.experience .map-popover>button { position:absolute; right:8px; top:8px; font-size:30px; width:44px; height:44px; }
+@media(max-width:999px),(orientation:portrait) {
+  .experience .map-popover { position:relative; left:auto; top:auto; width:auto; margin:12px; }
+}

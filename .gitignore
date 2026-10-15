@@ -2,6 +2,8 @@ node_modules/
 .next/
 out/
 test-results/
+test-results-sources/
+test-results-keys/
 playwright-report/
 .env*
 .superpowers/

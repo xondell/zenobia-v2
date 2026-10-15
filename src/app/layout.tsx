@@ -10,6 +10,7 @@ import '@fontsource/cormorant-garamond/cyrillic-500.css';
 import '@fontsource/cormorant-garamond/cyrillic-400-italic.css';
 import '@fontsource/cinzel/latin-400.css';
 import './globals.css';
+import './projector.css';
 
 export const metadata: Metadata = {
   title: 'ЗЕНОБИЯ — Женщина, бросившая вызов Риму',

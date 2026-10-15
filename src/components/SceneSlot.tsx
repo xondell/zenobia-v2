@@ -23,6 +23,7 @@ export function SceneSlot({ kind, presenting = false }: { kind: SceneKind; prese
   const [reset, setReset] = useState(0);
   const [ruins, setRuins] = useState(false);
   const [face, setFace] = useState(0);
+  const [inspection, setInspection] = useState(0);
   const [spinning, setSpinning] = useState(true);
   const [detail, setDetail] = useState('');
   useEffect(() => {
@@ -51,18 +52,20 @@ export function SceneSlot({ kind, presenting = false }: { kind: SceneKind; prese
   return <div ref={ref} className={`scene-slot scene-${kind}`}>
     <div className="scene-stage" role="group" aria-label={kind === 'coin' ? 'Трёхмерная монета Зенобии' : 'Трёхмерная архитектура Пальмиры'}>
       {fallback}
-      {supported && !simple && visible && <SceneBoundary fallback={fallback}><SceneCanvas key={reset} kind={kind} reduced={reduced} exploring={exploring} ruins={ruins} face={face} spinning={spinning} presenting={presenting} onDetail={setDetail} onFailure={() => setSupported(false)} /></SceneBoundary>}
+      {supported && !simple && visible && <SceneBoundary fallback={fallback}><SceneCanvas key={reset} kind={kind} reduced={reduced} exploring={exploring} ruins={ruins} face={face} inspection={inspection} spinning={spinning} presenting={presenting} onDetail={setDetail} onFailure={() => setSupported(false)} /></SceneBoundary>}
     </div>
     {kind !== 'hero' && <>
       <div className="scene-toolbar">
-        {kind === 'city' ? <><button onClick={() => setExploring(e => !e)} aria-pressed={exploring}><Box size={15} />{exploring ? 'Завершить осмотр' : 'Исследовать 3D'}</button><button onClick={() => setRuins(r => !r)} aria-pressed={ruins}>{ruins ? 'Реконструкция' : 'Условные руины'}</button></> : <><button onClick={() => { setFace(f => 1 - f); setSpinning(false); }}>Показать {face === 0 ? 'реверс' : 'аверс'}</button><button onClick={() => setSpinning(s => !s)} aria-pressed={spinning}>{spinning ? 'Остановить вращение' : 'Вращать монету'}</button></>}
+        {kind === 'city' ? <><button onClick={() => setExploring(e => !e)} aria-pressed={exploring}><Box size={15} />{exploring ? 'Завершить осмотр' : 'Исследовать 3D'}</button><button onClick={() => setRuins(r => !r)} aria-pressed={ruins}>{ruins ? 'Реконструкция' : 'Условные руины'}</button></> : <><button onClick={() => { setFace(f => 1 - f); setInspection(n => n + 1); setSpinning(false); }}>Показать {face === 0 ? 'реверс' : 'аверс'}</button><button onClick={() => setSpinning(s => !s)} aria-pressed={spinning}>{spinning ? 'Остановить вращение' : 'Вращать монету'}</button></>}
         <button className="icon-button" onClick={() => { setReset(r => r + 1); setFace(0); setDetail(''); }} aria-label="Сбросить камеру"><RotateCcw size={16} /></button>
         <button onClick={() => setSimple(s => !s)} aria-pressed={simple}>{simple ? 'Включить 3D' : 'Без 3D'}</button>
       </div>
       <p className="scene-caption">{kind === 'city' ? 'Храм Бела: G. De Gasperis, A. Cordisco / #NEWPALMYRA · CC BY 4.0. Остальная архитектура — собственная. Компоновка художественная, не точный план. В режиме осмотра: тяните для вращения, колесо — масштаб.' : 'CNG · Антониниан, 20 мм, 3,17 г · CC BY-SA 2.5. Фототекстуры подлинные; объём и край условны. Тяните для вращения, колесо — масштаб.'}</p>
+      <div className="scene-information">
       {kind === 'city' && <div className="hotspot-list">{[['Колоннада', 'Монументальная колоннада связывала важнейшие общественные здания. Главная улица тянулась примерно на 1,1 км.'], ['Храм Бела', 'Храм Бела был одним из важнейших религиозных сооружений Пальмиры. Его архитектура соединяла местные и греко-римские традиции.'], ['Римский театр', 'Театр отражает влияние греко-римской архитектуры. В сцене он показан схематично, в виде полукруглых рядов.']].map(([name, text]) => <button key={name} onClick={() => setDetail(text)}>{name} <span>+</span></button>)}</div>}
-      {kind === 'coin' && <div className="coin-legends"><button onClick={() => setDetail('AVG — Augusta. Императорский титул, который использовала Зенобия. На монете: S ZЄNOBIA AVG; нормализованная запись — S ZENOBIA AVG.')}>S ZЄNOBIA <u>AVG</u> <span>↗</span></button><button onClick={() => setDetail('IVNO REGINA — «Юнона-царица». На реверсе Юнона держит патеру и скипетр; у её ног павлин.')}>IVNO REGINA <span>↗</span></button></div>}
+      {kind === 'coin' && <div className="coin-legends"><button aria-pressed={!spinning && face === 0} onClick={() => { setFace(0); setSpinning(false); setInspection(n => n + 1); setDetail('AVG — Augusta. Императорский титул, который использовала Зенобия. На монете: S ZЄNOBIA AVG; нормализованная запись — S ZENOBIA AVG.'); }}>S ZЄNOBIA <u>AVG</u> <span>↗</span></button><button aria-pressed={!spinning && face === 1} onClick={() => { setFace(1); setSpinning(false); setInspection(n => n + 1); setDetail('IVNO REGINA — «Юнона-царица». На реверсе Юнона держит патеру и скипетр; у её ног павлин.'); }}>IVNO REGINA <span>↗</span></button></div>}
       {detail && <p className="object-detail" role="status">{detail}</p>}
+      </div>
     </>}
   </div>;
 }

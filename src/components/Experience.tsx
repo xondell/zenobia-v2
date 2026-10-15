@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowLeft, ArrowRight, BookOpen, Expand, Menu, MonitorPlay, X } from 'lucide-react';
 import { chapters } from '@/data/chapters';
 import { sources } from '@/data/sources';
@@ -16,20 +16,55 @@ export default function Experience() {
   const [notes, setNotes] = useState(false);
   const [panel, setPanel] = useState<Panel>(null);
   const [notice, setNotice] = useState('');
+  const [collapsedText, setCollapsedText] = useState<Record<string, boolean>>({});
   const progress = useRef<HTMLDivElement>(null);
   const root = useRef<HTMLDivElement>(null);
   const navigationTarget = useRef<number | null>(null);
   const presentationActive = useRef(false);
+  const transitioning = useRef(false);
+  const animation = useRef<Animation | null>(null);
+  const direction = useRef(1);
+  const [inTransition, setInTransition] = useState(false);
   const chapter = chapters[current];
 
   const go = useCallback((index: number) => {
     const next = Math.max(0, Math.min(9, index));
+    if (transitioning.current) return;
+    setPanel(null);
+    if (presenting && next !== current && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const outgoing = document.getElementById(chapters[current].id);
+      if (!outgoing) return;
+      direction.current = next > current ? 1 : -1;
+      transitioning.current = true; setInTransition(true);
+      const motion = outgoing.animate([{ opacity: 1, transform: 'translateX(0)' }, { opacity: .15, transform: `translateX(${-direction.current * 28}px)` }], { duration: 220, easing: 'ease-in', fill: 'forwards' });
+      animation.current = motion;
+      void motion.finished.then(() => {
+        setCurrent(next);
+        history.replaceState(null, '', '#' + chapters[next].id);
+      }).catch(() => {});
+      return;
+    }
     if (presenting) window.scrollTo({ top: 0, behavior: 'instant' });
     else navigationTarget.current = next;
     setCurrent(next); setPanel(null);
     history.replaceState(null, '', '#' + chapters[next].id);
     if (!presenting) document.getElementById(chapters[next].id)?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-  }, [presenting]);
+  }, [presenting, current]);
+
+  useLayoutEffect(() => {
+    if (!presenting || !transitioning.current) return;
+    animation.current?.cancel();
+    const incoming = document.getElementById(chapters[current].id);
+    if (!incoming) return;
+    const motion = incoming.animate([{ opacity: .15, transform: `translateX(${direction.current * 28}px)` }, { opacity: 1, transform: 'translateX(0)' }], { duration: 420, easing: 'cubic-bezier(.22,1,.36,1)' });
+    animation.current = motion;
+    void motion.finished.catch(() => {}).finally(() => {
+      if (animation.current !== motion) return;
+      transitioning.current = false; setInTransition(false); animation.current = null;
+    });
+  }, [current, presenting]);
+
+  useEffect(() => () => { animation.current?.cancel(); }, []);
 
   const fullscreen = useCallback(async () => {
     try {
@@ -48,6 +83,8 @@ export default function Experience() {
   };
 
   const exit = useCallback(() => {
+    animation.current?.cancel(); animation.current = null;
+    transitioning.current = false; setInTransition(false);
     presentationActive.current = false;
     setPresenting(false); setNotes(false); setNotice('');
     if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
@@ -77,13 +114,15 @@ export default function Experience() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (panel) return;
+      if (panel || e.defaultPrevented) return;
       const target = e.target as HTMLElement;
+      if (e.altKey || e.ctrlKey || e.metaKey || target.isContentEditable || target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      if (presenting && e.key.toLowerCase() === 'n') { e.preventDefault(); setNotes(n => !n); return; }
+      if (target.closest('[role="button"], [role="tab"], [role="slider"]')) return;
       if (e.altKey || e.ctrlKey || e.metaKey || shouldIgnoreShortcut(target.tagName, target.isContentEditable)) return;
       if (e.key.toLowerCase() === 'f') { e.preventDefault(); void fullscreen(); }
       if (!presenting) return;
       if (e.key === 'Escape') { e.preventDefault(); exit(); }
-      if (e.key.toLowerCase() === 'n') { e.preventDefault(); setNotes(n => !n); }
       if (['ArrowRight', 'ArrowLeft', ' ', 'Home', 'End'].includes(e.key)) { e.preventDefault(); go(getNextChapter(current, e.key)); }
     };
     document.addEventListener('keydown', onKey);
@@ -115,22 +154,22 @@ export default function Experience() {
     return () => { cancelled = true; cleanup?.(); };
   }, [presenting]);
 
-  return <div ref={root} className={`experience ${presenting ? 'presenting' : ''}`}>
+  return <div ref={root} data-transitioning={inTransition} className={`experience ${presenting ? 'presenting' : ''}`}>
     <a href="#prologue" className="skip-link">Перейти к истории</a>
     <header className="site-header">
       <button className="wordmark" onClick={() => go(0)} aria-label="Зенобия — к началу">Z<span className="logo-rule" />ENOBIA</button>
       <span className="header-caption">ИСТОРИЯ ОДНОГО ВЫЗОВА</span>
       <nav aria-label="Основная навигация">
-        <button onClick={() => setPanel('chapters')}><Menu size={15} /><span>Главы</span></button>
+        <button aria-label="Главы" onClick={() => setPanel('chapters')}><Menu size={15} /><span>Главы</span></button>
         <button className="explore-nav" onClick={() => go(2)}>Исследовать</button>
-        <button onClick={() => setPanel('sources')}><BookOpen size={15} /><span>Источники</span></button>
-        {presenting ? <button className="presentation-button" onClick={exit}><X size={15} />Выйти</button> : <button className="presentation-button" onClick={enter}><MonitorPlay size={15} /><span>Презентация</span></button>}
+        <button aria-label="Источники" onClick={() => setPanel('sources')}><BookOpen size={15} /><span>Источники</span></button>
+        {presenting ? <button className="presentation-button" onClick={exit}><X size={15} />Выйти</button> : <button aria-label="Презентация" className="presentation-button" onClick={enter}><MonitorPlay size={15} /><span>Презентация</span></button>}
       </nav>
       <div className="reading-progress" ref={progress} />
     </header>
 
     <main>
-      {chapters.map((c, index) => <section key={c.id} id={c.id} data-chapter={index} aria-labelledby={`${c.id}-title`} hidden={presenting && current !== index} className={`chapter chapter-${c.id}`}>
+      {chapters.map((c, index) => <section key={c.id} id={c.id} data-chapter={index} aria-labelledby={`${c.id}-title`} hidden={presenting && current !== index} className={`chapter chapter-${c.id} ${[1, 2, 4, 5, 6, 8].includes(index) ? 'chapter-immersive' : ''} ${collapsedText[c.id] ? 'text-collapsed' : ''}`}>
         {index === 0 ? <>
           <div className="hero-visual"><ChapterVisual id={c.id} presenting={presenting} /></div>
           <div className="hero-shade" />
@@ -144,8 +183,12 @@ export default function Experience() {
           </div>
           <div className="hero-bottom"><span>ПАЛЬМИРА, СИРИЯ<br /><small>34°33′15″N 38°16′00″E</small></span><button onClick={() => go(1)} className="scroll-cue"><ArrowDown size={18} /><span>Листайте, чтобы открыть историю</span></button><span className="hero-edition">ДЕСЯТЬ ГЛАВ<br /><small>ОДНА НЕВЕРОЯТНАЯ ИСТОРИЯ</small></span></div>
         </> : <>
-          <div className="chapter-heading reveal"><p className="eyebrow"><span className="chapter-number">{String(index + 1).padStart(2, '0')}</span> {c.english} <span className="fine-line" /></p><p className="chapter-kicker">{c.kicker}</p><h2 id={`${c.id}-title`}>{c.title}</h2><p className="chapter-subtitle">{c.subtitle}</p></div>
-          <div className="chapter-layout"><div className="chapter-copy reveal">{c.paragraphs.map((p, j) => <p key={j}>{p}</p>)}<div className="source-links">{c.sources.map(id => { const s = sources.find(source => source.id === id)!; return <a key={id} href={s.url} target="_blank" rel="noreferrer">{s.title} ↗</a>; })}</div>{index === 9 && <div className="closing-actions"><button className="gold-button" onClick={() => go(0)}>Изучить историю заново <ArrowRight size={16} /></button><button onClick={() => setPanel('sources')}>Исторические источники</button><button onClick={enter}><MonitorPlay size={16} />Режим презентации</button></div>}</div><div className="chapter-art reveal"><ChapterVisual id={c.id} presenting={presenting} /></div></div>
+          <div className="chapter-heading reveal">
+            <p className="eyebrow"><span className="chapter-number">{String(index + 1).padStart(2, '0')}</span> {c.english} <span className="fine-line" /></p>
+            <p className="chapter-kicker">{c.kicker}</p><h2 id={`${c.id}-title`}>{c.title}</h2><p className="chapter-subtitle">{c.subtitle}</p>
+            {[1, 2, 4, 5, 6, 8].includes(index) && <button className="toggle-copy" aria-expanded={!collapsedText[c.id]} onClick={() => setCollapsedText(previous => ({ ...previous, [c.id]: !previous[c.id] }))}>{collapsedText[c.id] ? 'Показать текст' : 'Свернуть текст'}</button>}
+          </div>
+          <div className="chapter-layout"><div className="chapter-copy reveal">{c.paragraphs.map((p, j) => <p key={j}>{p}</p>)}{index === 9 && <div className="closing-actions"><button className="gold-button" onClick={() => go(0)}>Изучить историю заново <ArrowRight size={16} /></button><button onClick={() => setPanel('sources')}>Исторические источники</button><button onClick={enter}><MonitorPlay size={16} />Режим презентации</button></div>}</div><div className="chapter-art reveal"><ChapterVisual id={c.id} presenting={presenting} /></div></div>
         </>}
       </section>)}
     </main>

@@ -64,8 +64,10 @@ test('all presentation slides fit a 1366×768 projector without scrolling', asyn
   await page.goto('/');
   await page.getByRole('button', { name: 'Презентация', exact: true }).first().click();
   for (let i = 0; i < 10; i++) {
+    await expect(page.locator('.experience')).toHaveAttribute('data-transitioning', 'false');
     const slide = page.locator('main > section[data-chapter]:not([hidden])');
     await expect(slide).toHaveCount(1);
+    await expect(slide).toHaveAttribute('data-chapter', String(i));
     const bounds = await slide.boundingBox();
     expect(bounds!.height).toBeLessThanOrEqual(769);
     const footerTop = (await page.locator('.presentation-controls').boundingBox())!.y;

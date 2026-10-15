@@ -13,4 +13,4 @@ createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': types[extname(file)] || 'application/octet-stream', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'X-Frame-Options': 'DENY' });
     res.end(data);
   } catch { res.writeHead(404); res.end('Not found'); }
-}).listen(Number(process.env.PORT || 3000), '0.0.0.0', () => console.log('ZENOBIA: http://localhost:' + (process.env.PORT || 3000)));
+}).listen(Number(process.env.PORT || 3101), '0.0.0.0', () => console.log('ZENOBIA V2: http://localhost:' + (process.env.PORT || 3101)));
